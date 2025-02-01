@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Greenhouse Monitoring</title>
+<link rel="stylesheet" href="monitor.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+    
+    <div class="container">
+
+        <h1> GREENHOUSE MONITORING</h1>
+        <div class="grid">
+            <div class="dog temperature">
+                <p>Temperature</p>
+                <div class="content">
+                <img src="thermometer-icon-high-temperature-symbol-vector-6547358-removebg-preview.png">
+                <span id="temp-value" style="font-size: 50px;"> 43°C</span>
+            </div>
+            <div class="temp-bar-container">
+                <div class="temp-bar"></div> <!-- Adjust width dynamically -->
+            </div>
+            </div>
+
+            <div class="dog humidity">
+                <div class="content">
+                    <p>Humidity</p>
+                    <img src="images-removebg-preview.png" alt="Humidity Icon">
+                </div>
+                <div class="gauge">
+                    <div class="gauge__body">
+                        <div class="gauge__fill"></div>
+                        <div class="gauge__cover">0%</div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="dog light">
+                <p>Light Intensity</p>
+                <div class="content">
+                    <img src="[CITYPNG.COM]PNG Light Bulb Idea White Icon - 1000x1000.png" alt="Light Icon"> <!-- Same layout as temperature with light icon -->
+                    <span id="light-value" style="font-size: 50px;">0%</span>
+                </div>
+                <div class="light-bar-container">
+                    <div class="light-bar" id="light-bar"></div>
+                </div>
+            </div>
+            
+
+            <div class="dog density">
+                <p>Density</p>
+                <div class="density-gauge">
+                    <div class="density-gauge__body">
+                        <div class="density-gauge__fill"></div>
+                        <div class="density-gauge__cover">0%</div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="dog mist">
+                <p>Mist</p>
+                <label class="switch">
+                    <input type="checkbox" id="toggle">
+                    <span class="slider"></span>
+                    <span class="switch-label off">OFF</span>
+                    <span class="switch-label on">ON</span>
+                </label>
+                
+            </div>
+            
+            <div class="dog fan">
+                <p>Fan</p>
+                <label class="switch">
+                    <input type="checkbox" id="fan-toggle">
+                    <span class="slider round"></span>
+                    <span class="switch-label off">OFF</span>
+                    <span class="switch-label on">ON</span>
+                </label>
+            </div>
+            
+
+            
+
+    </div>
+    <script src="monitor.js"></script>
+    
+</body>
+
+
+</html>

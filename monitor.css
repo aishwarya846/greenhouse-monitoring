@@ -1,0 +1,354 @@
+
+/* .bebas-neue-regular {
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+  } */
+
+  
+
+
+  
+body{
+    margin: 50px;
+    background-color: rgb(11, 42, 25);
+    /* background-image:url("Screenshot\ 2025-02-01\ at\ 1.06.51\ AM.png"); */
+    background-size: cover;
+    color: white;
+    position: relative;
+    text-align: center;
+    top:-10px;
+    font-size: 30px;
+    font-family: "Bebas Neue", serif;
+    font-weight:400;
+    height: 100vh;
+}
+  
+/* body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+    border-radius: 0; 
+} */
+.container{
+padding:30px;
+
+}
+.grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.dog{
+    background-color: #3A6B46;
+    padding: 20px 10px 50px 40px;
+    border-radius: 40px;
+    font-size: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align:left;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.content {
+    display: flex;
+    align-items: center; /* Vertically align icon and text */
+    gap: 10px; /* Add spacing between icon and text */
+    width: 100%; /* Ensure it doesn't break layout */
+}
+
+.dog:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dog img {
+    width: 80px; /* Adjust icon size */
+    height: auto;
+    margin-bottom: 0; /* Remove excessive margin */
+    position: static; /* Remove absolute positioning */
+}
+
+.temperature { 
+    background-color: #237a448d; 
+    padding-right:40px;
+
+}  /* Green */
+
+.temp-bar-container {
+    width: 100%;
+    height: 30px; /* Thickness of the bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background */
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 30px;
+    
+    
+}
+
+.temp-bar {
+    height: 100%;
+    width: 0%; /* Will be updated dynamically */
+    background: linear-gradient(90deg, #2196F3, #FF9800, #FF0000); /* Blue → Orange → Red */
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.temperature .content img {
+    width: 200px; /* Adjust icon size */
+}
+
+.humidity { background-color: #237a448d; }  /* Blue */
+
+.humidity .content {
+    font-size: 40px; /* Adjust text size */
+    align-items: center;
+    
+}
+
+.humidity .content img {
+    width: 50px; /* Adjust icon size */
+}
+
+/* .humidity .content p {
+    font-size: 25px;
+    font-weight: bold; 
+    margin: 0;
+} */
+
+
+
+.gauge {
+  width: 100%;
+  max-width: 250px;
+  font-family: "Roboto", sans-serif;
+  font-size: 38px;
+  color: #ffffff;
+  position: relative;
+
+  
+  
+}
+
+.gauge__body {
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  /* background: #ffffff; */
+  background-color: #8bafa85d;
+  position: relative;
+  border-top-left-radius: 100% 200%;
+  border-top-right-radius: 100% 200%;
+  overflow: hidden;
+}
+
+.gauge__fill {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: inherit;
+  height: 100%;
+  background: #00d79a;
+  transform-origin: center top;
+  transform: rotate(0.25turn);
+  transition: transform 0.2s ease-out;
+}
+
+.gauge__cover {
+  width: 75%;
+  height: 150%;
+  background: #6ca382;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25%;
+  box-sizing: border-box;
+} 
+
+.humidity-display {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #ffffff;
+}
+.light { 
+    background-color: #237a448d;
+    padding-right:40px;
+
+}  /* Yellow */
+.light-intensity-container {
+    text-align: center;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.light-bar-container {
+    width: 100%;
+    height: 30px; /* Height of the bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for the bar */
+    border-radius: 5px;
+    /* margin: 20px auto; */
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.light-bar {
+    height: 100%;
+    width: 0%; /* Will be updated dynamically */
+    background:#ece144;
+    /* background: linear-gradient(90deg, #ffeb3b, #ff9800); Yellow → Orange gradient */
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* #light-value {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} */
+
+
+
+.density { background-color: #237a448d; }  /* Orange */
+
+.density-gauge {
+    width: 100%;
+    max-width: 250px;
+    font-family: "Roboto", sans-serif;
+    font-size: 38px;
+    color: #ffffff;
+    position: relative;
+}
+
+.density-gauge__body {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    background-color: #8bafa85d;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden;
+}
+
+.density-gauge__fill {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    background: #0ac1419b;
+    transform-origin: center top;
+    transform: rotate(0.25turn);
+    transition: transform 0.2s ease-out;
+}
+
+.density-gauge__cover {
+    width: 75%;
+    height: 150%;
+    background: #8ccda6b1;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25%;
+    box-sizing: border-box;
+}
+
+.mist { background-color: #237a448d; }  /* Cyan */
+.fan { background-color: #237a448d; }  /* Light Green */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 125px;
+    height: 50px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 42px;
+    width: 46px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.switch-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    pointer-events: none; /* Prevents clicks */
+}
+
+/* OFF text (left side) */
+.switch-label.off {
+    right: 20px;
+    opacity: 1;
+}
+
+/* ON text (right side) */
+.switch-label.on {
+    left: 17px;
+    opacity: 1; /* Hidden by default */
+}
+
+/* When toggled ON */
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider::before {
+    transform: translateX(70px);
+}
+
+/* Show the "ON" text and hide "OFF" when toggled */
+input:checked + .slider + .switch-label.on {
+    opacity: 1;
+}
+
+input:checked + .slider + .switch-label.off {
+    opacity: 0;
+}
