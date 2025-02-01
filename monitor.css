@@ -63,7 +63,7 @@ padding:30px;
 .content {
     display: flex;
     align-items: center; /* Vertically align icon and text */
-    gap: 10px; /* Add spacing between icon and text */
+    gap: 40px; /* Add spacing between icon and text */
     width: 100%; /* Ensure it doesn't break layout */
 }
 
@@ -85,6 +85,10 @@ padding:30px;
 
 }  /* Green */
 
+.temperature p{
+    position: relative;
+    top:17px;
+}
 .temp-bar-container {
     width: 100%;
     height: 30px; /* Thickness of the bar */
@@ -105,7 +109,7 @@ padding:30px;
 }
 
 .temperature .content img {
-    width: 200px; /* Adjust icon size */
+    width: 50px; /* Adjust icon size */
 }
 
 .humidity { background-color: #237a448d; }  /* Blue */
