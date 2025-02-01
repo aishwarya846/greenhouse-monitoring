@@ -103,3 +103,24 @@ document.addEventListener("DOMContentLoaded", function () {
     if (mistToggle) updateStatus(mistToggle, "Mist");
     if (fanToggle) updateStatus(fanToggle, "Fan");
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    function updateDensityBar(density) {
+        // Get the elements
+        let bar = document.querySelector("#density-bar");
+        let densityDisplay = document.querySelector("#density-value");
+
+        // Calculate percentage for the bar width (adjust max density as needed)
+        let percent = Math.min(100, (density / 100) * 100); // Assuming 100 is the max density
+
+        // Update the density bar width
+        bar.style.width = percent + "%";
+
+        // Update the text content of the density display
+        densityDisplay.textContent = `${density}%`; // This updates the text of the density
+    }
+
+    // Example: Update the density to 60%
+    updateDensityBar(60);
+});
