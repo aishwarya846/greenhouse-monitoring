@@ -5,72 +5,81 @@
     font-style: normal;
   } */
 
-  
+  @font-face {
+    font-family: 'Samsung Sharp Sans';
+    src: url('SamsungSans-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+  }
 
+  .dog, .temperature, .humidity, .light, .density {
+    background-color: #61a1937c; /* Same color applied to all these boxes */
+}
 
-  
-body{
-    margin: 50px;
+  body {
     background-color: rgb(11, 42, 25);
-    /* background-image:url("Screenshot\ 2025-02-01\ at\ 1.06.51\ AM.png"); */
-    background-size: cover;
+    /* background: linear-gradient(#049c37 45%, #000000); */
+    background: linear-gradient( #033813e1 35%, #6ea56a);
+    height: 100vh; /* Set height to 100% of the viewport */
+    margin: 0; /* Remove any default margin */
+    padding-bottom: 300px;
     color: white;
     position: relative;
     text-align: center;
-    top:-10px;
-    font-size: 30px;
-    font-family: "Bebas Neue", serif;
-    font-weight:400;
-    height: 100vh;
+    font-size: px; /* Reduced font size for better fit */
+    font-family: 'Samsung Sharp Sans';
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide scrollbars */
 }
-  
-/* body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: -1; 
-    border-radius: 0; 
-} */
-.container{
-padding:30px;
 
+.container {
+    padding: 20px; /* Reduced padding for better fit */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.grid{
-    display:grid;
+
+.grid {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 50px; /* Reduced gap */
+    max-width: 1200px; /* Ensure grid doesn’t stretch too wide */
+    width: 100%;
 }
 
-.dog{
-    background-color: #3A6B46;
-    padding: 20px 10px 50px 40px;
-    border-radius: 40px;
-    font-size: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.dog {
+
+    padding: 15px 10px 30px 30px; /* Reduced padding */
+    border-radius: 40px; /* Smaller border radius for a sleeker look */
+    font-size: 30px; /* Reduced font size */
+    box-shadow: 10px 10px 20px rgb(48, 47, 47);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align:left;
+    text-align: left;
     justify-content: center;
     transition: transform 0.2s, box-shadow 0.2s;
+    /* height: 300px;  */
+    overflow: hidden; /* Hide overflow */
 }
 
 .content {
     display: flex;
-    align-items: center; /* Vertically align icon and text */
-    gap: 40px; /* Add spacing between icon and text */
-    width: 100%; /* Ensure it doesn't break layout */
+    align-items: center;
+    gap: 15px; /* Reduced gap */
+    width: 100%;
 }
 
 .dog:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
 
 .dog img {
     width: 80px; /* Adjust icon size */
@@ -79,8 +88,7 @@ padding:30px;
     position: static; /* Remove absolute positioning */
 }
 
-.temperature { 
-    background-color: #237a448d; 
+.temperature {  
     padding-right:40px;
 
 }  /* Green */
@@ -112,7 +120,6 @@ padding:30px;
     width: 50px; /* Adjust icon size */
 }
 
-.humidity { background-color: #237a448d; }  /* Blue */
 
 .humidity .content {
     font-size: 40px; /* Adjust text size */
@@ -124,73 +131,31 @@ padding:30px;
     width: 50px; /* Adjust icon size */
 }
 
-/* .humidity .content p {
-    font-size: 25px;
-    font-weight: bold; 
-    margin: 0;
-} */
 
-
-
-.gauge {
-  width: 100%;
-  max-width: 250px;
-  font-family: "Roboto", sans-serif;
-  font-size: 38px;
-  color: #ffffff;
-  position: relative;
-
-  
-  
-}
-
-.gauge__body {
-  width: 100%;
-  height: 0;
-  padding-bottom: 50%;
-  /* background: #ffffff; */
-  background-color: #8bafa85d;
-  position: relative;
-  border-top-left-radius: 100% 200%;
-  border-top-right-radius: 100% 200%;
-  overflow: hidden;
-}
-
-.gauge__fill {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: inherit;
-  height: 100%;
-  background: #00d79a;
-  transform-origin: center top;
-  transform: rotate(0.25turn);
-  transition: transform 0.2s ease-out;
-}
-
-.gauge__cover {
-  width: 75%;
-  height: 150%;
-  background: #6ca382;
-  border-radius: 50%;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translateX(-50%); 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 25%;
-  box-sizing: border-box;
+.humidity { 
+    padding-right: 40px;
 } 
 
-.humidity-display {
-    margin-top: 20px;
-    font-size: 30px;
-    color: #ffffff;
+.humidity-bar-container {
+    width: 100%;
+    height: 30px; /* Same thickness as temp bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background */
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 30px;
 }
+
+.humidity-bar {
+    height: 100%;
+    width: 0%; /* Will be updated dynamically */
+    background: linear-gradient(90deg, #0024d7, #00c3ff); /* Aqua → Teal */
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+
+
 .light { 
-    background-color: #237a448d;
     padding-right:40px;
 
 }  /* Yellow */
@@ -227,7 +192,7 @@ padding:30px;
 
 
 
-.density { background-color: #237a448d; }  /* Orange */
+
 
 .density-gauge {
     width: 100%;
@@ -277,8 +242,7 @@ padding:30px;
     box-sizing: border-box;
 }
 
-.mist { background-color: #237a448d; }  /* Cyan */
-.fan { background-color: #237a448d; }  /* Light Green */
+
 
 .switch {
     position: relative;

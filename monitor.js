@@ -19,20 +19,42 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const gaugeElement = document.querySelector(".gauge");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const gaugeElement = document.querySelector(".gauge");
 
-    if (gaugeElement) { // Ensure the gauge exists
-        function setGaugeValue(gauge, value) {
-            if (value < 0 || value > 1) return;
+//     if (gaugeElement) { // Ensure the gauge exists
+//         function setGaugeValue(gauge, value) {
+//             if (value < 0 || value > 1) return;
 
-            gauge.querySelector(".gauge__fill").style.transform = `rotate(${value / 2}turn)`;
-            gauge.querySelector(".gauge__cover").textContent = `${Math.round(value * 100)}%`;
-        }
+//             gauge.querySelector(".gauge__fill").style.transform = `rotate(${value / 2}turn)`;
+//             gauge.querySelector(".gauge__cover").textContent = `${Math.round(value * 100)}%`;
+//         }
 
-        setGaugeValue(gaugeElement, 0.1); 
+//         setGaugeValue(gaugeElement, 0.1); 
+//     }
+// });
+
+document.addEventListener('DOMContentLoaded', function () {
+    function updateHumidityBar(humidity) {
+        // Get the elements
+        let bar = document.querySelector(".humidity-bar");
+        let humidityDisplay = document.querySelector("#humidity-value");
+
+        // Calculate percentage for the bar width
+        let percent = Math.min(100, humidity); // Assuming 100% is max
+
+        // Update the humidity bar width
+        bar.style.width = percent + "%";
+
+        // Update the text content of the humidity display
+        humidityDisplay.textContent = `${humidity}%`; // This updates the text
     }
+
+    // Example: Update the humidity to 50%
+    updateHumidityBar(82);
 });
+
+
 
 function updateLightIntensity(value) {
     const lightBar = document.getElementById('light-bar');
