@@ -4,6 +4,11 @@
 <title> Greenhouse Monitoring</title>
 <link rel="stylesheet" href="monitor.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='monitor.css') }}"> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='monitor.js') }}"></script>-->
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
@@ -32,6 +37,7 @@
                 <p>Humidity</p>
                 <div class="content">
                     <img src="Screenshot_2025-02-02_at_11.50.48_AM-removebg-preview.png">
+                    <!--<img src="{{ url_for('static', filename='humidity.png') }}" alt="Humidity Icon">-->
                     <span id="humidity-value" style="font-size: 50px;"> 50%</span>
                 </div>
                 <div class="humidity-bar-container">
@@ -44,7 +50,8 @@
             <div class="dog light">
                 <p>Light Intensity</p>
                 <div class="content">
-                    <img src="Screenshot_2025-02-02_at_12.39.56_PM-removebg-preview.png" alt="Light Icon"> <!-- Same layout as temperature with light icon -->
+                    <img src="Screenshot_2025-02-02_at_12.39.56_PM-removebg-preview.png" alt="Light Icon"> 
+                    <!-- <img src="{{ url_for('static', filename='light.png') }}" alt="Light Icon"> -->
                     <span id="light-value" style="font-size: 50px;">0%</span>
                 </div>
                 <div class="light-bar-container">
@@ -56,7 +63,8 @@
                 <div class="dog density">
                     <p>Density</p>
                     <div class="content">
-                        <img src="plant-icon.png" alt="Density Icon"> <!-- Same layout as light intensity with density icon -->
+                        <img src="plant-icon.png" alt="Density Icon"> 
+                        <!-- <img src="{{ url_for('static', filename='light.png') }}" alt="Light Icon"> -->
                         <span id="density-value" style="font-size: 50px;">0%</span>
                     </div>
                     <div class="density-bar-container">
@@ -95,6 +103,22 @@
 
     </div>
     <script src="monitor.js"></script>
+    <!-- <script>
+      // Function to periodically fetch the density value and update the display
+      function updateDensity() {
+          $.getJSON('/get_density', function(data) {
+              // Update the density percentage on the page
+              $('#density-value').text(data.density.toFixed(2) + '%');
+              // Update the density bar width
+              const densityPercent = data.density;
+              $('#density-bar').css('width', densityPercent + '%');
+          });
+      }
+
+      // Call updateDensity every 1 second
+      setInterval(updateDensity, 1000);
+      </script> 
+    <script src="{{ url_for('static', filename='script.js') }}"></script>-->
     
 </body>
 
