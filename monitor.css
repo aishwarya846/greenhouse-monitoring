@@ -128,7 +128,7 @@
 }
 
 .humidity .content img {
-    width: 50px; /* Adjust icon size */
+    width: 60px; /* Adjust icon size */
 }
 
 
@@ -175,6 +175,10 @@
     overflow: hidden;
 }
 
+.light .content img {
+    width: 55px; /* Adjust icon size */
+}
+
 .light-bar {
     height: 100%;
     width: 0%; /* Will be updated dynamically */
@@ -204,7 +208,7 @@
 }
 
 .density .content img {
-    width: 50px; /* Adjust icon size */
+    width: 70px; /* Adjust icon size */
 }
 
 .density-bar-container {
